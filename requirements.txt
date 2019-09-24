@@ -81,7 +81,6 @@ python-gilt==1.2.1
 PyYAML==5.1.2
 redis==3.3.8
 requests==2.20.1
-ruamel.ordereddict==0.4.14
 ruamel.yaml==0.16.5
 ruamel.yaml.clib==0.1.2
 s3transfer==0.2.1
