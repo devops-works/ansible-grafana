@@ -1,7 +1,7 @@
 ansible-grafana role
 ====================
 
-[![Build Status](https://travis-ci.org/leucos/ansible-grafana.svg?branch=master)](https://travis-ci.org/leucos/ansible-grafana)
+[![Build Status](https://travis-ci.org/devops-works/ansible-grafana.svg?branch=master)](https://travis-ci.org/devops-works/ansible-grafana)
 
 Installs [grafana](http://grafana.org/) on ubuntu 16.04 and up.
 
