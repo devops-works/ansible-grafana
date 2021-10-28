@@ -98,3 +98,8 @@ grafana_external_image_storage: {}
 #     access_key: ...
 #     secret_key: ...
 #
+
+# Set to true to disable legacy alerting and enable grafana8 alerts
+# Set to false to enable legacy alerting and disable grafana8 alerts
+grafana_unified_alerting: false
+
