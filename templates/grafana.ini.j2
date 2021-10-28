@@ -396,8 +396,16 @@ from_address = "{{ grafana_smtp_from_address }}"
 
 # Grafana 8 alerting
 # https://grafana.com/docs/grafana/latest/alerting/unified-alerting/
+{% if grafana_unified_alerting %}
 [unified_alerting]
-enabled = {{ grafana_unified_alerting | lower }}
+enabled = true
 
 [alerting]
-enabled = {{ not grafana_unified_alerting | lower }}
+enabled = false
+{% else %}
+[unified_alerting]
+enabled = false
+
+[alerting]
+enabled = true
+{% endif %}
