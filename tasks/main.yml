@@ -1,9 +1,17 @@
 ---
-- include: check_vars.yml
+- ansible.builtin.include_tasks:
+    file: check_vars.yml
+    apply:
+      tags:
+        - grafana
+        - check
   tags:
-    - grafana
-    - check
+    - always
 
-- include: grafana.yml
+- ansible.builtin.include_tasks:
+    file: grafana.yml
+    apply:
+      tags:
+        - grafana
   tags:
-    - grafana
+    - always

@@ -1,36 +1,36 @@
 ---
 - name: Installs apt-transport-https
-  apt:
+  ansible.builtin.apt:
     pkg: apt-transport-https
     state: present
 
 - name: Imports grafana apt key
-  apt_key:
+  ansible.builtin.apt_key:
     url: https://packages.grafana.com/gpg.key
     state: present
 
 - name: Adds grafana repository
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "deb https://packages.grafana.com/oss/deb stable main"
     state: present
     update_cache: true
 
 - name: Installs grafana
-  apt:
+  ansible.builtin.apt:
     pkg: grafana
     state: present
 
 - name: Configures grafana
-  template:
+  ansible.builtin.template:
     src: grafana.ini.j2
     dest: /etc/grafana/grafana.ini
     owner: root
     group: grafana
-    mode: 0640
+    mode: "0640"
     backup: true
   notify: ['Restart grafana']
 
 - name: Ensure grafana starts at boot
-  service:
+  ansible.builtin.service:
     name: grafana-server
     enabled: true
